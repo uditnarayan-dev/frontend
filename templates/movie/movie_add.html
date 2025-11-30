@@ -1,0 +1,31 @@
+{% extends "account/base.html" %}
+
+{% block title %}Add Movie{% endblock title %}
+
+{% block content %}
+<div class="container_fluid">
+    <div class="container">
+        <div>
+            <div>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div>
+                        <label>Movie name</label>
+                        <input type="text" name="moviename" required>
+                    </div>
+                    <div>
+                        <label>Movie price</label>
+                        <input type="number" name="movieprice" required>
+                    </div>
+                    <div>
+                        <label>Movie image</label>
+                        <input type="file" name="movieimage" accept="image*/" required>
+                    </div>
+
+                    <Button type="submit">Save</Button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

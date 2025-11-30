@@ -1,0 +1,27 @@
+{% extends "account/base.html" %}
+{% load static %}
+
+{% block title %}Seller Home{% endblock title %}
+
+{% block content %}
+
+<div class="container-fluid bg-body-secondary">
+    <div class="container bg-dark-subtle">
+        <a href="{% url 'uploadmovie' %}"><Button class="btn btn-success mb-2">Add Movie</Button></a>
+        <h3>Seller Home</h3>
+        <div class=" movieCardsHolder d-flex flex-wrap justify-content-center">
+            {% for m in movies %}
+            <div class="p-2 col-lg-4 col-sm-1">
+                <div class="movieCard bg-danger-subtle shadow-lg rounded-2 border border-secondary">
+                    <img src="{{ m.movieimage.url }}" alt="MovieBanner" class="rounded-2 mb-2">
+                    <h5>{{m.moviename}}</h5>
+                    <p class="mb-2">{{m.movieprice}}</p>
+                    <a href="#"><Button class="btn btn-success mb-2">Book</Button></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
