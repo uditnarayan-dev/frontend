@@ -47,3 +47,5 @@ def delete_booking(request, id):
     messages.info(request, "Booking Deleted Successfully")
     return redirect('my_bookings')
 
+def no(req):
+    pass
