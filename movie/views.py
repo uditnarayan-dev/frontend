@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from movie.models import Movie, BookedMovies
 from django.contrib import messages
-
+#from main
 def upload_movie(request):
     if request.method == "POST":
         seller = request.user
@@ -46,3 +46,4 @@ def delete_booking(request, id):
     booking.delete()
     messages.info(request, "Booking Deleted Successfully")
     return redirect('my_bookings')
+
